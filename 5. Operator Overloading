@@ -1,0 +1,58 @@
+#include <iostream>
+#include <vector>
+
+class Matrix {
+private:
+    std::vector<std::vector<int>> data;
+    int rows;
+    int cols;
+
+public:
+    Matrix(int rows, int cols) : rows(rows), cols(cols) {
+        data.resize(rows, std::vector<int>(cols, 0));
+    }
+
+    Matrix operator*(const Matrix& other) {
+        if (cols != other.rows) {
+            std::cerr << "Matrix dimensions are incompatible for multiplication." << std::endl;
+            return Matrix(0, 0);
+        }
+
+        Matrix result(rows, other.cols);
+
+        for (int i = 0; i < rows; ++i) {
+            for (int j = 0; j < other.cols; ++j) {
+                for (int k = 0; k < cols; ++k) {
+                    result.data[i][j] += data[i][k] * other.data[k][j];
+                }
+            }
+        }
+
+        return result;
+    }
+
+    // Function to display the matrix
+    void display() {
+        for (int i = 0; i < rows; ++i) {
+            for (int j = 0; j < cols; ++j) {
+                std::cout << data[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+    }
+};
+
+int main() {
+    Matrix mat1(2, 3);
+    mat1.display();
+    std::cout << std::endl;
+
+    Matrix mat2(3, 2);
+    mat2.display();
+    std::cout << std::endl;
+
+    Matrix result = mat1 * mat2;
+    result.display();
+
+    return 0;
+}
