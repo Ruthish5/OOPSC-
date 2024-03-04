@@ -1,0 +1,27 @@
+#include <iostream>
+
+class Increment {
+private:
+    int value;
+
+public:
+    Increment() : value(0) {}
+
+    void operator++() {
+        ++value;
+    }
+
+    void display() {
+        std::cout << "Value: " << value << std::endl;
+    }
+};
+
+int main() {
+    Increment obj;
+    obj.display();
+
+    ++obj;
+    obj.display();
+
+    return 0;
+}
