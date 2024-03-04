@@ -1,0 +1,28 @@
+#include <iostream>
+
+class Subtracter {
+public:
+    Subtracter(int value) : value(value) {}
+
+    Subtracter operator-(const Subtracter& other) {
+        return Subtracter(this->value - other.value);
+    }
+
+    int getValue() const {
+        return value;
+    }
+
+private:
+    int value;
+};
+
+int main() {
+    Subtracter num1(10);
+    Subtracter num2(5);
+
+    Subtracter result = num1 - num2;
+
+    std::cout << "Result of subtraction: " << result.getValue() << std::endl;
+
+    return 0;
+}
