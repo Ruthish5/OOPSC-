@@ -1,0 +1,30 @@
+#include <iostream>
+
+int findMax(int a, int b) {
+    return (a > b) ? a : b;
+}
+
+float findMax(float a, float b) {
+    return (a > b) ? a : b;
+}
+
+char findMax(char a, char b) {
+    return (a > b) ? a : b;
+}
+
+int main() {
+    int intNum1 = 5, intNum2 = 10;
+    float floatNum1 = 3.5, floatNum2 = 2.5;
+    char char1 = 'a', char2 = 'b';
+
+    int maxInt = findMax(intNum1, intNum2);
+    std::cout << "Maximum of integers: " << maxInt << std::endl;
+
+    float maxFloat = findMax(floatNum1, floatNum2);
+    std::cout << "Maximum of floating-point numbers: " << maxFloat << std::endl;
+
+    char maxChar = findMax(char1, char2);
+    std::cout << "Maximum of characters: " << maxChar << std::endl;
+
+    return 0;
+}
