@@ -1,0 +1,22 @@
+#include <iostream>
+
+int add(int a, int b) {
+    return a + b;
+}
+
+float add(float a, float b) {
+    return a + b;
+}
+
+int main() {
+    int intNum1 = 5, intNum2 = 10;
+    float floatNum1 = 3.5, floatNum2 = 2.5;
+
+    int intSum = add(intNum1, intNum2);
+    std::cout << "Sum of integers: " << intSum << std::endl;
+
+    float floatSum = add(floatNum1, floatNum2);
+    std::cout << "Sum of floating-point numbers: " << floatSum << std::endl;
+
+    return 0;
+}
