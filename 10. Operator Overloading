@@ -1,0 +1,29 @@
+#include <iostream>
+
+class MyClass {
+public:
+    MyClass(int value) : data(value) {}
+
+    MyClass& operator+=(const MyClass& other) {
+        this->data += other.data;
+        return *this;
+    }
+
+    int getValue() const {
+        return data;
+    }
+
+private:
+    int data;
+};
+
+int main() {
+    MyClass obj1(5);
+    MyClass obj2(10);
+
+    obj1 += obj2;
+
+    std::cout << "Result of addition: " << obj1.getValue() << std::endl;
+
+    return 0;
+}
