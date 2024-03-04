@@ -1,0 +1,21 @@
+#include <iostream>
+
+class FunctionCaller {
+public:
+    void operator()(int a, int b) {
+        callFunction(a, b);
+    }
+
+private:
+    void callFunction(int a, int b) {
+        std::cout << "Called function with arguments: " << a << " and " << b << std::endl;
+    }
+};
+
+int main() {
+    FunctionCaller caller;
+
+    caller(5, 10);
+
+    return 0;
+}
