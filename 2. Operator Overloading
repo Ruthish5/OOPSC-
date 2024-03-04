@@ -1,0 +1,31 @@
+#include <iostream>
+
+class Adder {
+private:
+    int value;
+
+public:
+    Adder() : value(0) {}
+
+    Adder(int val) : value(val) {}
+
+    Adder operator+(const Adder& other) {
+        Adder result;
+        result.value = this->value + other.value;
+        return result;
+    }
+
+    void display() {
+        std::cout << "Value: " << value << std::endl;
+    }
+};
+
+int main() {
+    Adder obj1(5);
+    Adder obj2(10);
+
+    Adder result = obj1 + obj2;
+    result.display();
+
+    return 0;
+}
