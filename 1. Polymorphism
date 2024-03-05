@@ -1,0 +1,39 @@
+#include <iostream>
+
+class Person {
+public:
+    virtual void work() {
+        std::cout << "Person is working." << std::endl;
+    }
+};
+
+class Employee : public Person {
+public:
+    void work() override {
+        std::cout << "Employee is doing their job." << std::endl;
+    }
+};
+
+class Manager : public Person {
+public:
+    void work() override {
+        std::cout << "Manager is managing tasks." << std::endl;
+    }
+};
+
+int main() {
+    Person person;
+    Employee employee;
+    Manager manager;
+
+    std::cout << "Calling work() for Person: ";
+    person.work();
+
+    std::cout << "Calling work() for Employee: ";
+    employee.work();
+
+    std::cout << "Calling work() for Manager: ";
+    manager.work();
+
+    return 0;
+}
