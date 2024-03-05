@@ -1,0 +1,30 @@
+#include <iostream>
+
+class Vehicle {
+public:
+    virtual void drive() const = 0;
+};
+
+class Car : public Vehicle {
+public:
+    void drive() const override {
+        std::cout << "Car is driving on the road." << std::endl;
+    }
+};
+
+class Truck : public Vehicle {
+public:
+    void drive() const override {
+        std::cout << "Truck is driving on the highway." << std::endl;
+    }
+};
+
+int main() {
+    Car car;
+    Truck truck;
+
+    car.drive();
+    truck.drive();
+
+    return 0;
+}
